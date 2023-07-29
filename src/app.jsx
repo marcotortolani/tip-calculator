@@ -110,14 +110,14 @@ export function App() {
           <div className="wrapper-people">
             <div className="people-text">
               <h3 className="people-title">Number of People</h3>
-              <span className="people-error" hidden>
-                Can't be zero
-              </span>
+              {people <=0 && <span className="people-error">Can't be zero</span>}
             </div>
 
             <div className="wrapper-input">
               <input
-                className="people-input wrong-input2"
+                className={
+                  people > 0 ? "people-input" : "people-input wrong-input"
+                }
                 type="number"
                 placeholder="0"
                 value={people > 0 ? people : null}
@@ -171,7 +171,7 @@ export function App() {
               Frontend Mentor
             </a>
           </div>
-          <span> - </span> 
+          <span> - </span>
           <div>
             Coded by{" "}
             <a href="https://mtorto.com" target="_blank">
