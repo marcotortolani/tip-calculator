@@ -271,26 +271,26 @@ body {
           align-items: start;
           justify-content: space-between;
 
-          .people-text{
+          .people-text {
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
 
             .people-title {
-                font-family: "fontBold";
-                font-size: 1rem;
-                //line-height: 1;
-                color: $darkGray;
-              }
-              .people-error{
-                font-family: "fontBold";
-                font-size: 1rem;
-                //line-height: 1;
-                color: $error;
-              }
+              font-family: "fontBold";
+              font-size: 1rem;
+              //line-height: 1;
+              color: $darkGray;
+            }
+            .people-error {
+              font-family: "fontBold";
+              font-size: 1rem;
+              //line-height: 1;
+              color: $error;
+            }
           }
-          
+
           .wrapper-input {
             width: 100%;
             display: flex;
@@ -321,8 +321,8 @@ body {
                 outline-color: $primary;
               }
             }
-            .wrong-input{
-                border: 2px solid $error;
+            .wrong-input {
+              border: 2px solid $error;
             }
 
             input[type="number"]::-webkit-inner-spin-button,
@@ -484,9 +484,9 @@ body {
             color: $dark;
             background-color: $primary;
             border: none;
-            &:hover{
-                cursor: pointer;
-                background-color: lighten($primary, 20);
+            &:hover {
+              cursor: pointer;
+              background-color: lighten($primary, 20);
             }
             border-radius: 5px;
             -webkit-border-radius: 5px;
@@ -514,7 +514,10 @@ body {
       //top: 5vh;
       font-family: "fontRegular";
       .attribution {
-        width: 80%;
+        width: 70%;
+        max-width: 400px;
+        display: flex;
+        justify-content: space-around;
         font-size: 11px;
         text-align: center;
       }
@@ -530,7 +533,6 @@ body {
   body {
     height: 100%;
     overflow-y: scroll;
-
   }
   body .App {
     overflow-y: scroll;
@@ -556,10 +558,8 @@ body {
         margin-bottom: 2%;
       }
     }
-
   }
 }
-
 
 @media (max-width: 550px) {
   body {
@@ -608,7 +608,6 @@ body {
   }
 }
 
-
 @media (max-width: 420px) {
   body .App {
     .app-title {
@@ -626,6 +625,7 @@ body {
         .wrapper-bill {
           min-height: 60px;
           .bill-title {
+            font-family: "fontRegular";
             font-size: 0.8rem;
           }
           .wrapper-input {
@@ -639,6 +639,7 @@ body {
           min-height: 150px;
           justify-content: space-around;
           .tip-title {
+            font-family: "fontRegular";
             font-size: 0.8rem;
           }
           .buttons-container {
@@ -655,9 +656,13 @@ body {
         .wrapper-people {
           min-height: 60px;
           margin-top: 2vh;
-          .people-title {
-            font-size: 0.8rem;
+          .people-text {
+            .people-title {
+              font-family: "fontRegular";
+              font-size: 0.8rem;
+            }
           }
+
           .wrapper-input {
             .people-input {
               font-size: 1.2rem;
@@ -674,53 +679,56 @@ body {
             height: 45%;
             .tip-title {
               padding: 0 1rem;
-              h3{
+              h3 {
                 font-size: 0.8rem;
                 line-height: 1;
               }
-              h4{
+              h4 {
                 font-size: 0.7rem;
               }
             }
-            .tip-amount{
-                padding-right: 1rem;
-                span{
-                    font-size: clamp(1.8rem, 5vw, 2.2rem);
-                }
+            .tip-amount {
+              padding-right: 1rem;
+              span {
+                font-size: clamp(1.8rem, 5vw, 2.2rem);
+              }
             }
           }
-          .wrapper-total{
+          .wrapper-total {
             height: 45%;
             .total-title {
               padding: 0 1rem;
-              h3{
+              h3 {
                 font-size: 0.8rem;
                 line-height: 1;
               }
-              h4{
+              h4 {
                 font-size: 0.7rem;
               }
             }
-            .total-amount{
-                padding-right: 1rem;
-                span{
-                    font-size: clamp(1.8rem, 5vw, 2.2rem);
-                }
+            .total-amount {
+              padding-right: 1rem;
+              span {
+                font-size: clamp(1.8rem, 5vw, 2.2rem);
+              }
             }
           }
         }
-        .btn-container{
-            padding-top: 0;
-            .btn-reset{
-                height: 5vh;
-                min-height: 40px;
-                font-size: 1rem;
-            }
+        .btn-container {
+          padding-top: 0;
+          .btn-reset {
+            height: 5vh;
+            min-height: 40px;
+            font-size: 1rem;
+          }
         }
       }
     }
-    // footer{
+    footer{
+      .attribution{
+        flex-direction: column;
+      }
 
-    // }
+    }
   }
 }
