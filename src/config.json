@@ -1,0 +1,111 @@
+{
+  "data": {
+    "default": {
+      "light": {
+        "primary": "rgb(38, 192, 171)",
+        "secondary": "rgb(0, 73, 77)",
+        "primaryTitle": "rgb(94, 122, 125)",
+        "secondaryTitle": "rgb(127, 156, 159)",
+        "textBtn": "rgb(244, 250, 250)",
+        "backgroundApp": "rgb(197, 228, 231)",
+        "backgroundBtn": "rgb(0, 73, 77)",
+        "backgroundInput": "rgb(244, 250, 250)",
+        "backgroundCalc": "rgb(255, 255, 255)",
+        "error": "rgb(255, 99, 71)",
+        "link": "rgb(14, 120, 202)"
+      },
+      "dark": {
+        "primary": "rgb(18, 152, 131)",
+        "secondary": "rgb(0, 43, 47)",
+        "primaryTitle": "rgb(137, 176, 169)",
+        "secondaryTitle": "rgb(197, 228, 231)",
+        "textBtn": "rgb(137, 176, 169)",
+        "backgroundApp": "rgb(0, 53, 57)",
+        "backgroundBtn": "rgb(20, 83, 87)",
+        "backgroundInput": "rgb(94, 120, 110)",
+        "backgroundCalc": "rgb(0, 23, 27)",
+        "error": "rgb(255, 29, 21)",
+        "link": "rgb(14, 120, 202)"
+      }
+    },
+    "minimal": {
+      "light": {
+        "primary": "rgb(119, 141, 169)",
+        "textBtn": "rgb(65, 90, 119)",
+        "secondary": "rgb(210, 220, 230)",
+        "backgroundInput": "rgb(240, 240, 240)",
+        "error": "rgb(255, 89, 91)",
+        "link": "rgb(14, 150, 252)"
+      },
+      "dark": {
+        "primary": "rgb(119, 141, 169)",
+        "secondary": "rgb(20, 30, 40)",
+        "primaryTitle": "rgb(240, 240, 240)",
+        "secondaryTitle": "rgb(197, 218, 231)",
+        "textBtn": "rgb(85, 120, 159)",
+        "backgroundApp": "rgb(0, 0, 0)",
+        "backgroundBtn": "rgb(60, 83, 97)",
+        "backgroundInput": "rgb(94, 120, 150)",
+        "backgroundCalc": "rgb(15, 20, 35)",
+        "error": "rgb(255, 29, 21)",
+        "link": "rgb(14, 120, 202)"
+      }
+    },
+    "winter": {
+      "light": {
+        "primary": "rgb(72, 202, 228)",
+        "secondary": "rgb(2, 62, 138)",
+        "primaryTitle": "rgb(0, 119, 182)",
+        "secondaryTitle": "rgb(127, 176, 219)",
+        "textBtn": "rgb(244, 250, 250)",
+        "backgroundApp": "rgb(202, 240, 248)",
+        "backgroundBtn": "rgb(2, 62, 138)",
+        "backgroundInput": "rgb(244, 250, 250)",
+        "backgroundCalc": "rgb(173, 232, 244)",
+        "error": "rgb(255, 59, 51)",
+        "link": "rgb(14, 120, 202)"
+      },
+      "dark": {
+        "primary": "rgb(127, 176, 219)",
+        "secondary": "rgb(3, 24, 94)",
+        "primaryTitle": "rgb(2, 72, 138)",
+        "secondaryTitle": "rgb(127, 176, 219)",
+        "textBtn": "rgb(244, 250, 250)",
+        "backgroundApp": "rgb(3, 24, 94)",
+        "backgroundBtn": "rgb(2, 62, 138)",
+        "backgroundInput": "rgb(244, 250, 250)",
+        "backgroundCalc": "rgb(0, 119, 182)",
+        "error": "rgb(247, 37, 133)",
+        "link": "rgb(76, 201, 240)"
+      }
+    },
+    "summer": {
+      "light": {
+        "primary": "rgb(227, 120, 80)",
+        "secondary": "rgb(95, 15, 64)",
+        "primaryTitle": "rgb(15, 76, 92)",
+        "secondaryTitle": "rgb(67, 106, 139)",
+        "textBtn": "rgb(244, 250, 250)",
+        "backgroundApp": "rgb(247, 190, 120)",
+        "backgroundBtn": "rgb(95, 15, 64)",
+        "backgroundInput": "rgb(244, 250, 250)",
+        "backgroundCalc": "rgb(251, 169, 86)",
+        "error": "rgb(255, 59, 51)",
+        "link": "rgb(67, 76, 159)"
+      },
+      "dark": {
+        "primary": "rgb(227, 100, 20)",
+        "secondary": "rgb(95, 5, 24)",
+        "primaryTitle": "rgb(25, 66, 122)",
+        "secondaryTitle": "rgb(67, 126, 159)",
+        "textBtn": "rgb(244, 250, 250)",
+        "backgroundApp": "rgb(17, 30, 50)",
+        "backgroundBtn": "rgb(95, 5, 24)",
+        "backgroundInput": "rgb(244, 250, 250)",
+        "backgroundCalc": "rgb(181, 89, 26)",
+        "error": "rgb(154, 3, 30)",
+        "link": "rgb(15, 15, 54)"
+      }
+    }
+  }
+}

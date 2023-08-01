@@ -1,10 +1,13 @@
 import { useContext, useMemo } from "preact/hooks";
 import { StateContext } from "../StateProvider";
+import { ConfigContext } from "../ConfigProvider";
 
 let tipPerPerson = "0.00";
 let totalPerPerson = "0.00";
 
 export default function Display() {
+  const { primary, secondary, backgroundInput, secondaryTitle } =
+    useContext(ConfigContext);
   const { bill, setBill, tip, setTip, setCustomTip, people, setPeople } =
     useContext(StateContext);
 
@@ -31,33 +34,38 @@ export default function Display() {
     totalPerPerson = "0.00";
   };
   return (
-    <section className="wrapper-display">
+    <section className="wrapper-display" style={{ backgroundColor: secondary }}>
       <div className="amounts-container">
         <div className="wrapper-tip-amount">
           <div className="tip-title">
-            <h3>Tip Amount</h3>
-            <h4>/ person</h4>
+            <h3 style={{ color: backgroundInput }}>Tip Amount</h3>
+            <h4 style={{ color: secondaryTitle }}>/ person</h4>
           </div>
 
           <div className="tip-amount">
-            <span>${tipPerPerson}</span>
+            <span style={{ color: primary }}>${tipPerPerson}</span>
           </div>
         </div>
 
         <div className="wrapper-total">
           <div className="total-title">
-            <h3>Total</h3>
-            <h4>/ person</h4>
+            <h3 style={{ color: backgroundInput }}>Total</h3>
+            <h4 style={{ color: secondaryTitle }}>/ person</h4>
           </div>
 
           <div className="total-amount">
-            <span>${totalPerPerson}</span>
+            <span style={{ color: primary }}>${totalPerPerson}</span>
           </div>
         </div>
       </div>
 
       <div className="btn-container">
-        <button className="btn-reset" type="button" onClick={handleReset}>
+        <button
+          className="btn-reset"
+          style={{ color: secondary, backgroundColor: primary }}
+          type="button"
+          onClick={handleReset}
+        >
           Reset
         </button>
       </div>

@@ -1,9 +1,20 @@
 import { useContext } from "preact/hooks";
 import { StateContext } from "../StateProvider";
+import { ConfigContext } from "../ConfigProvider";
 
 const valuesTips = [5, 10, 15, 25, 50];
 
 export default function Inputs() {
+  const {
+    primary,
+    primaryTitle,
+    secondary,
+    textBtn,
+    backgroundApp,
+    backgroundInput,
+    backgroundBtn,
+    error,
+  } = useContext(ConfigContext);
   const {
     bill,
     setBill,
@@ -35,10 +46,17 @@ export default function Inputs() {
   return (
     <section className="wrapper-inputs">
       <div className="wrapper-bill">
-        <h3 className="bill-title">Bill</h3>
+        <h3 className="bill-title" style={{ color: primaryTitle }}>
+          Bill
+        </h3>
         <div className="wrapper-input">
           <input
             className="bill-input"
+            style={{
+              color: secondary,
+              backgroundColor: backgroundInput,
+              outlineColor: primary,
+            }}
             type="number"
             placeholder="0"
             value={bill > 0 ? bill : null}
@@ -48,11 +66,17 @@ export default function Inputs() {
       </div>
 
       <div className="wrapper-tip-buttons">
-        <h3 className="tip-title">Select Tip %</h3>
+        <h3 className="tip-title" style={{ color: primaryTitle }}>
+          Select Tip %
+        </h3>
         <div className="buttons-container">
           {valuesTips.map((valueTip, index) => (
             <button
-              className={valueTip === tip ? "btn active" : "btn"}
+              className="btn"
+              style={{
+                backgroundColor: valueTip === tip ? primary : backgroundBtn,
+                color: valueTip === tip ? secondary : textBtn,
+              }}
               onClick={() => handleTip(index)}
               type="button"
               key={index}
@@ -62,9 +86,12 @@ export default function Inputs() {
           ))}
 
           <input
-            className={
-              customTip > 0 ? "btn input-custom active" : "btn input-custom"
-            }
+            className="btn input-custom"
+            style={{
+              color: secondary,
+              backgroundColor: customTip > 0 ? primary : backgroundInput,
+              outlineColor: primary,
+            }}
             type="number"
             placeholder="Custom"
             value={customTip > 0 ? customTip : null}
@@ -77,13 +104,25 @@ export default function Inputs() {
 
       <div className="wrapper-people">
         <div className="people-text">
-          <h3 className="people-title">Number of People</h3>
-          {people <= 0 && <span className="people-error">Can't be zero</span>}
+          <h3 className="people-title" style={{ color: primaryTitle }}>
+            Number of People
+          </h3>
+          {people <= 0 && (
+            <span className="people-error" style={{ color: error }}>
+              Can't be zero
+            </span>
+          )}
         </div>
 
         <div className="wrapper-input">
           <input
-            className={people > 0 ? "people-input" : "people-input wrong-input"}
+            className="people-input"
+            style={{
+              color: secondary,
+              backgroundColor: backgroundInput,
+              outlineColor: primary,
+              borderColor: people <= 0 ? error : "transparent",
+            }}
             type="number"
             placeholder="0"
             value={people > 0 ? people : null}

@@ -1,9 +1,14 @@
-import { render } from 'preact'
-import { App } from './app.jsx'
+import { render } from "preact";
+import { App } from "./app.jsx";
 
+import "./index.css";
+import { ConfigProvider } from "./ConfigProvider.jsx";
 
-import './index.css'
+const app = (
+  <ConfigProvider>
+    <App />
+  </ConfigProvider>
+);
 
-
-render(<App />, document.getElementById('app'))
+render(app, document.getElementById("app"));
 //render(<App />, document.getElementById('app')!)
