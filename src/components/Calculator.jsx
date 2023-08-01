@@ -5,11 +5,15 @@ import Inputs from "./Inputs";
 import Display from "./Display";
 
 export default function Calculator() {
-  const { backgroundCalc } = useContext(ConfigContext);
+  const { backgroundCalc, userConfig } = useContext(ConfigContext);
   return (
     <main
       className="wrapper-calculator"
-      style={{ backgroundColor: backgroundCalc }}
+      style={
+        backgroundCalc !== ""
+          ? { backgroundColor: backgroundCalc }
+          : userConfig.theme === "dark" ? { border: "3px solid white" } : { border: "3px solid black" }
+      }
     >
       <Inputs />
       <Display />

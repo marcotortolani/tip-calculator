@@ -34,7 +34,14 @@ export default function Display() {
     totalPerPerson = "0.00";
   };
   return (
-    <section className="wrapper-display" style={{ backgroundColor: secondary }}>
+    <section
+      className="wrapper-display"
+      style={
+        secondary !== ""
+          ? { backgroundColor: secondary }
+          : { border: "2px solid black" }
+      }
+    >
       <div className="amounts-container">
         <div className="wrapper-tip-amount">
           <div className="tip-title">

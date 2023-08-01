@@ -1,31 +1,30 @@
 import "./app.scss";
-import { useContext, useState } from "preact/hooks";
+import { useContext } from "preact/hooks";
 import { StateProvider } from "./StateProvider.jsx";
 import Attribution from "./components/Attribution";
 import Calculator from "./components/Calculator";
 import { ConfigContext } from "./ConfigProvider";
 
-
-
 export function App() {
   const {
     backgroundApp,
     primaryTitle,
-    theme,
-    setTheme,
-    color,
-    setColor,
+    userConfig,
+    setUserConfig,
     colorOptions,
   } = useContext(ConfigContext);
 
   const handleChangeTheme = (e) => {
-    e.target.checked ? setTheme("light") : setTheme("dark");
+    e.target.checked
+      ? setUserConfig({theme: "light", color: userConfig.color})
+      : setUserConfig({theme: "dark", color: userConfig.color});
+      
   };
 
   const handleSelectColor = (e) => {
     const selectedOption = e.target.value;
-    
-    setColor(selectedOption);
+    //setUserColor(selectedOption);
+    setUserConfig({color: selectedOption, theme: userConfig.theme})
   };
 
   return (
@@ -35,7 +34,7 @@ export function App() {
           <label className="switch">
             <input
               type="checkbox"
-              checked={theme === "light" ? true : false}
+              checked={userConfig.theme === "light" ? true : false}
               onChange={(e) => handleChangeTheme(e)}
             />
             <div>
@@ -54,7 +53,7 @@ export function App() {
                 return (
                   <option
                     key={index}
-                    selected={colorOpt === color ? true : false}
+                    selected={colorOpt === userConfig.color ? true : false}
                   >
                     {colorOpt}
                   </option>
@@ -64,11 +63,9 @@ export function App() {
             {/* <button onClick={handleSelectColor} style="--h: 19px; --w: 64px;">
               <em></em>
               <div>
-                <span className="">{color}</span>
+                <span className="">{userConfig.color}</span>
               </div>
             </button> */}
-
-            
           </div>
         </div>
       </header>

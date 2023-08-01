@@ -10,7 +10,6 @@ export default function Inputs() {
     primaryTitle,
     secondary,
     textBtn,
-    backgroundApp,
     backgroundInput,
     backgroundBtn,
     error,
