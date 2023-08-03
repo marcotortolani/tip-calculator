@@ -11,4 +11,3 @@ const app = (
 );
 
 render(app, document.getElementById("app"));
-//render(<App />, document.getElementById('app')!)
