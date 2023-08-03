@@ -1,7 +1,7 @@
 import { useContext } from "preact/hooks";
 import { ConfigContext } from "../ConfigProvider";
 
-import Inputs from "./Inputs";
+import InputsScreen from "./InputsScreen";
 import Display from "./Display";
 
 export default function Calculator() {
@@ -12,10 +12,12 @@ export default function Calculator() {
       style={
         backgroundCalc !== ""
           ? { backgroundColor: backgroundCalc }
-          : userConfig.theme === "dark" ? { border: "3px solid white" } : { border: "3px solid black" }
+          : userConfig.theme === "dark"
+          ? { border: "3px solid white" }
+          : { border: "3px solid black" }
       }
     >
-      <Inputs />
+      <InputsScreen />
       <Display />
     </main>
   );

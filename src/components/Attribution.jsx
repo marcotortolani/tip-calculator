@@ -19,7 +19,7 @@ export default function Attribution() {
         <span style={{ color: secondaryTitle }}> - </span>
         <div style={{ color: secondaryTitle }}>
           Coded by{" "}
-          <a href="https://mtorto.com" style={{ color: link }} target="_blank">
+          <a href="https://github.com/marcotortolani" style={{ color: link }} target="_blank">
             Marco Tortolani
           </a>
         </div>
