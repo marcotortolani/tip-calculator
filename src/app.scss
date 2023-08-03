@@ -50,6 +50,24 @@ $error: rgb(255, 99, 71);
     -o-transform: translateY(0px);
   }
 }
+@keyframes hide-menu-color {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+  }
+}
 
 h1,
 h2,
@@ -202,6 +220,7 @@ body {
       }
 
       .wrapper-set-color {
+        z-index: 200;
         width: 25%;
         min-width: 60px;
         max-width: 140px;
@@ -243,16 +262,19 @@ body {
             -o-transition: 0.5s;
           }
           input {
+            z-index: 200;
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            padding: 12px 20px;
+            //padding: 12px 20px;
             padding: 10px;
+            padding-left: 14px;
             cursor: pointer;
             font-family: "fontBold";
             text-transform: capitalize;
+            text-align: start;
             letter-spacing: 1px;
             border: none;
             outline: none;
@@ -275,11 +297,12 @@ body {
             height: fit-content;
             padding: 1rem;
             position: absolute;
-            top: 60px;
+            //top: 60px;
+            top: 0;
             //background: #c2c2c2;
             //box-shadow: 0 30px 30px rgba(0, 0, 0, 0.05);
             overflow: hidden;
-            display: none;
+            //display: none;
             border-radius: 10px;
             .btn-option {
               width: 100%;
@@ -329,6 +352,20 @@ body {
             -o-transition: all 0.3s;
           }
         }
+        .dropdown.hide {
+          .options {
+            //display: none;
+            //animation: hide-menu-color 250ms linear normal;
+            //-webkit-animation: hide-menu-color 250ms linear normal;
+            opacity: 0;
+            z-index: -10;
+            transform: translateY(-50px) translateX(0) scale(0.3);
+            -webkit-transform: translateY(-50px) translateX(0) scale(0.3);
+            -moz-transform: translateY(-50px) translateX(0) scale(0.3);
+            -ms-transform: translateY(-50px) translateX(0) scale(0.3);
+            -o-transform: translateY(-50px) translateX(0) scale(0.3);
+          }
+        }
         .dropdown.active {
           &::before {
             top: 22px;
@@ -340,8 +377,14 @@ body {
           }
           .options {
             display: block;
-            animation: show-menu-color 250ms linear alternate;
-            -webkit-animation: show-menu-color 250ms linear alternate;
+            opacity: 1;
+            //animation: show-menu-color 250ms linear alternate;
+            //-webkit-animation: show-menu-color 250ms linear alternate;
+            transform: translateY(60px);
+            -webkit-transform: translateY(60px);
+            -moz-transform: translateY(60px);
+            -ms-transform: translateY(60px);
+            -o-transform: translateY(60px);
           }
         }
       }
@@ -890,7 +933,8 @@ body {
             width: 150%;
             width: fit-content;
             right: 0;
-            top: 40px;
+            //top: 40px;
+            top: -20px;
             //
             .btn-option {
               padding: 0.5rem;
@@ -947,12 +991,20 @@ body {
 @media (max-width: 420px) {
   body .App {
     header {
-      
       .wrapper-set-color {
         .dropdown {
           input {
             letter-spacing: 0px;
           }
+        }
+        .dropdown.hide {
+          .options {
+            transform: translateY(-50px) translateX(35px) scale(0.3);
+            -webkit-transform: translateY(-50px) translateX(35px) scale(0.3);
+            -moz-transform: translateY(-50px) translateX(35px) scale(0.3);
+            -ms-transform: translateY(-50px) translateX(35px) scale(0.3);
+            -o-transform: translateY(-50px) translateX(35px) scale(0.3);
+}
         }
       }
     }

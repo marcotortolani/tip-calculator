@@ -26,8 +26,8 @@ const DropdownSetColor = () => {
         <input
           onClick={handleMenuColor}
           style={{ color: textBtn, background: backgroundBtn }}
-          className="textBox"
-          type="text"
+          className=""
+          type="button"
           readOnly
           placeholder=""
           value={userConfig.color}
