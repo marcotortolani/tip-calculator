@@ -32,52 +32,22 @@ $error: rgb(255, 99, 71);
   src: url("./assets/fonts/SpaceMono-BoldItalic.ttf");
 }
 
-@keyframes bounce-horizontal {
-  20% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(2px);
-    box-shadow: 0 8px 12px var(--shadow);
-  }
-}
-
-@keyframes button-horizontal {
-  40% {
-    transform: translateX(104%);
-  }
-  75% {
-    transform: translateX(99%);
+@keyframes show-menu-color {
+  0% {
+    opacity: 0.2;
+    transform: translateY(-20%);
+    -webkit-transform: translateY(-20%);
+    -moz-transform: translateY(-20%);
+    -ms-transform: translateY(-20%);
+    -o-transform: translateY(-20%);
   }
   100% {
-    transform: translateX(100%);
-  }
-}
-
-@keyframes arrow-horizontal {
-  20% {
-    transform: translateX(var(--w));
-    filter: blur(0.5px);
     opacity: 1;
-  }
-  21% {
-    transform: translateX(var(--w));
-    opacity: 0;
-  }
-  22% {
-    transform: translateX(calc(var(--w) * -1));
-    opacity: 0;
-  }
-  23% {
-    transform: translateX(calc(var(--w) * -1));
-    opacity: 1;
-  }
-  50% {
-    transform: translateX(4px);
-    filter: blur(0);
-  }
-  100% {
-    transform: translateX(0);
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
   }
 }
 
@@ -97,7 +67,7 @@ div {
 
 body {
   width: 100vw;
-  max-width: 1440px;
+  //max-width: 1440px;
   height: 100vh;
   height: 100svh;
   display: flex;
@@ -109,7 +79,7 @@ body {
   .App {
     width: 100vw;
     //max-width: 925px;
-    max-width: 1440px;
+    //max-width: 1440px;
     height: 100vh;
     height: 100svh;
 
@@ -125,6 +95,7 @@ body {
       width: 100%;
       max-width: 925px;
       height: 10vh;
+      min-height: 70px;
       padding: 0 1rem;
       display: flex;
       justify-content: space-between;
@@ -219,141 +190,144 @@ body {
       .app-title {
         //position: absolute;
         //top: 10%;
-        width: 60%;
+        width: 55%;
+        margin: 0 8px;
         bottom: 1vh;
         font-family: "fontBold";
         font-size: 2.5rem;
-        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        font-size: clamp(1.2rem, 5vw, 2.5rem);
         text-transform: uppercase;
         text-align: center;
         //color: $secondaryGray;
       }
 
       .wrapper-set-color {
-        width: 20%;
+        width: 25%;
+        min-width: 60px;
+        max-width: 120px;
+        height: 80%;
+        min-height: 20px;
+        max-height: 50px;
         display: flex;
         justify-content: flex-end;
 
-        h2 {
-          font-family: "fontRegular";
-          font-size: 1rem;
-          text-align: end;
-        }
+        //background-color: burlywood;
 
         .select-menu {
-          --background: #fff;
-          --text: #171c28;
-          --icon: #3f4656;
-          --shadow: rgba(18, 22, 33, 0.2);
-          position: relative;
-          select,
-          button {
-            font-family: "Mukta Malar", Arial;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 21px;
-            margin: 0;
-            border: 0;
-            outline: 0;
-            text-align: left;
-            //text-transform: none;
-            text-transform: capitalize;
-            appearance: none;
-          }
-          select {
-            //pointer-events: none;
-            user-select: none;
-            //opacity: 0;
-            padding: 8px 36px 8px 10px;
-            //visibility: hidden;
-          }
-          button {
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            padding: 0;
+          width: 100%;
+          height: 100%;
+          //background-color: #9ea0be;
+
+          .dropdown {
+            position: relative;
+            //margin-top: 10px;
             width: 100%;
-            display: block;
-            cursor: pointer;
-            overflow: hidden;
-            border-radius: 6px;
-            box-shadow: 0 4px 12px var(--shadow);
-            color: var(--text);
-            background: var(--background);
-            div {
-              position: relative;
-              span {
-                display: block;
-                padding: 8px 32px 8px 10px;
-                &.next {
-                  position: absolute;
-                  width: 100%;
+            height: 100%;
+            &::before {
+              content: "";
+              z-index: 100000;
+              width: 8px;
+              height: 8px;
+              position: absolute;
+              right: 20px;
+              top: 15px;
+              border: 2px solid #333;
+              border-top: 2px solid transparent;
+              border-right: 2px solid transparent;
+              transition: 0.5s;
+              pointer-events: none;
+              transform: rotate(-45deg);
+              -webkit-transform: rotate(-45deg);
+              -moz-transform: rotate(-45deg);
+              -ms-transform: rotate(-45deg);
+              -o-transform: rotate(-45deg);
+              -webkit-transition: 0.5s;
+              -moz-transition: 0.5s;
+              -ms-transition: 0.5s;
+              -o-transition: 0.5s;
+            }
+            input {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              padding: 12px 20px;
+              padding: 10px;
+              cursor: pointer;
+              font-family: "fontBold";
+              text-transform: capitalize;
+              background: #fff;
+              border: none;
+              outline: none;
+              box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+              border-radius: 10px;
+              -webkit-border-radius: 10px;
+              -moz-border-radius: 10px;
+              -ms-border-radius: 10px;
+              -o-border-radius: 10px;
+            }
+
+            .options {
+              z-index: 1000;
+              width: 100%;
+              height: fit-content;
+              padding: 1rem;
+              position: absolute;
+              top: 60px;
+              background: #c2c2c2;
+              box-shadow: 0 30px 30px rgba(0, 0, 0, 0.05);
+              overflow: hidden;
+              display: none;
+              border-radius: 10px;
+              .btn-option {
+                width: 100%;
+                padding: 0.6rem 0;
+                border: none;
+                font-family: "fontRegular";
+                text-align: start;
+                text-transform: capitalize;
+                padding-left: 0.5rem;
+                background: inherit;
+                
+                cursor: pointer;
+                &:hover {
+                  font-family: "fontBold";
+                  color: white;
+                  background-color: #9ea0be;
+                  border-radius: 4px;
+                  transform: scale(1.1) translateX(0);
+                  -webkit-transform: scale(1.1) translateX(0);
+                  -moz-transform: scale(1.1) translateX(0);
+                  -ms-transform: scale(1.1) translateX(0);
+                  -o-transform: scale(1.1) translateX(0);
                 }
               }
+              transition: all 0.3s;
+              -webkit-transition: all 0.3s;
+              -moz-transition: all 0.3s;
+              -ms-transition: all 0.3s;
+              -o-transition: all 0.3s;
             }
-            em {
-              --r: 45deg;
+          }
+          .dropdown.active {
+            &::before {
+              top: 22px;
+              transform: rotate(-225deg);
+              -webkit-transform: rotate(-225deg);
+              -moz-transform: rotate(-225deg);
+              -ms-transform: rotate(-225deg);
+              -o-transform: rotate(-225deg);
+            }
+            .options {
               display: block;
-              position: absolute;
-              right: 12px;
-              top: 50%;
-              width: 7px;
-              height: 7px;
-              margin-top: -4px;
-              &:before {
-                content: "";
-                width: 7px;
-                height: 7px;
-                display: block;
-                transform: rotate(var(--r)) scale(0.75);
-                border-right: 2px solid var(--icon);
-                border-bottom: 2px solid var(--icon);
-              }
+              animation: show-menu-color 250ms linear alternate;
+              -webkit-animation: show-menu-color 250ms linear alternate;
             }
           }
           
-          &.horizontal {
-            button {
-              div {
-                display: flex;
-                span {
-                  right: 100%;
-                  top: 0;
-                }
-              }
-              em {
-                --r: -45deg;
-                margin-top: -3px;
-              }
-            }
-          }
-          &.change {
-            button {
-              animation: bounce-vertical 0.45s linear;
-              div {
-                animation: button-vertical 0.6s linear forwards 0.05s;
-              }
-              em {
-                animation: arrow-vertical 0.45s linear;
-              }
-            }
-            &.horizontal {
-              button {
-                animation-name: bounce-horizontal;
-                div {
-                  animation-name: button-horizontal;
-                }
-                em {
-                  animation-name: arrow-horizontal;
-                }
-              }
-            }
-          }
         }
-        
-
       }
     }
 
@@ -364,7 +338,7 @@ body {
       min-width: 360px;
       max-width: 925px;
       height: 62vh;
-      min-height: 350px;
+      min-height: 580px;
       max-height: 484px;
       //margin-top: 65px;
       //position: absolute;
@@ -381,6 +355,7 @@ body {
       .wrapper-inputs {
         width: 45%;
         height: 90%;
+        min-height: 280px;
         max-height: 420px;
         padding: 1.1rem;
         display: flex;
@@ -653,6 +628,7 @@ body {
       .wrapper-display {
         width: 45%;
         height: 90%;
+        min-height: 280px;
         max-height: 420px;
 
         display: flex;
@@ -760,7 +736,7 @@ body {
         .btn-container {
           width: 100%;
           height: 40%;
-          padding-top: 2.5rem;
+          padding-top: 2vh;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -873,13 +849,58 @@ body {
   body .App {
     overflow-y: scroll;
     justify-content: space-between;
+    header{
+      .app-title{
+        line-height: 1;
+      }
+      .wrapper-set-color{
+        max-height: 35px;
+        margin-right: 10px;
+        .select-menu{
+          .dropdown{
+            &::before{
+              display: none;
+              width: 6px;
+              height: 6px;
+              right: 10px;
+              top: 30%;
+            }
+            input{
+              padding: 5px;
+              text-align: center;
+              font-size: clamp(0.6rem, 4vw, 1rem);
+            }
+            .options{
+              width: 120px;
+              width: 150%;
+              right: 0;
+              top: 40px;
+              //
+              .btn-option{
+                padding: 0.5rem;
+              }
+              
+            }
+          }
+          .dropdown.active{
+            &::before{
+              // top: 50%;
+              display: none;
+            }
+          }
+        }
+      }
+    }
 
     .wrapper-calculator {
+      width: 96vw;
+      min-width: 280px;
       max-width: 500px;
       height: 80vh;
       max-height: 800px;
       margin-top: 0;
       flex-direction: column;
+
 
       .wrapper-inputs {
         width: 80%;
@@ -912,11 +933,15 @@ body {
 
 @media (max-width: 420px) {
   body .App {
-    .app-title {
-      margin-top: 10px;
+    header {
+      .app-title {
+        margin-top: 10px;
+      }
+      
     }
+
     .wrapper-calculator {
-      width: 100vw;
+      width: 96vw;
       min-width: 260px;
       min-height: 620px;
       //justify-content: space-between;
@@ -1033,4 +1058,3 @@ body {
     }
   }
 }
-
