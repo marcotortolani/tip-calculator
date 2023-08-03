@@ -31,9 +31,10 @@
     "minimal": {
       "light": {
         "primary": "rgb(119, 121, 129)",
-        "textBtn": "rgb(50, 50, 60)",
         "secondary": "rgb(10, 20, 30)",
-        "secondaryTitle": "rgb(180, 200, 210)",
+        "primaryTitle":"rgb(0, 0, 0)",
+        "secondaryTitle": "rgb(170, 180, 180)",
+        "textBtn": "rgb(50, 50, 60)",
         "backgroundBtn": "rgb(200, 200, 200)",
         "backgroundInput": "rgb(230, 230, 230)",
         "backgroundCalc": "",
@@ -45,10 +46,10 @@
         "secondary": "rgb(35, 40, 40)",
         "primaryTitle": "rgb(240, 240, 240)",
         "secondaryTitle": "rgb(197, 218, 231)",
-        "textBtn": "rgb(30, 30, 40)",
+        "textBtn": "rgb(190, 190, 190)",
         "backgroundApp": "rgb(10, 10, 20)",
         "backgroundBtn": "rgb(80, 83, 97)",
-        "backgroundInput": "rgb(100, 110, 110)",
+        "backgroundInput": "rgb(110, 110, 115)",
         "backgroundCalc": "",
         "error": "rgb(255, 29, 21)",
         "link": "rgb(14, 120, 202)"

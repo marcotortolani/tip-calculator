@@ -8,7 +8,9 @@ import { ConfigContext } from "./ConfigProvider";
 export function App() {
   const {
     backgroundApp,
+    backgroundBtn,
     primaryTitle,
+    textBtn,
     userConfig,
     setUserConfig,
     colorOptions,
@@ -54,30 +56,36 @@ export function App() {
         </h1>
         <div className="wrapper-set-color">
           {/* <h2>Set Color</h2> */}
-          <div className="select-menu horizontal chang">
-            <div className={`dropdown ${showMenuColor ? "active" : "hide"}`}>
-              <input
-                onClick={handleMenuColor}
-                className="textBox"
-                type="text"
-                readOnly
-                placeholder=""
-                value={userConfig.color}
-              />
-              <div className="options">
-                {colorOptions.map((colorOpt, index) => {
-                  return (
-                    <button
-                      key={index}
-                      className="btn-option"
-                      onClick={(e) => handleSelectColor(e)}
-                      value={colorOpt}
-                    >
-                      {colorOpt}
-                    </button>
-                  );
-                })}
-              </div>
+          <div
+            className={`dropdown ${showMenuColor ? "active" : "hide"}`}
+            style={{ borderColor: textBtn }}
+          >
+            <input
+              onClick={handleMenuColor}
+              style={{ color: textBtn, background: backgroundBtn }}
+              className="textBox"
+              type="text"
+              readOnly
+              placeholder=""
+              value={userConfig.color}
+            />
+            <div
+              className="options"
+              style={{ color: textBtn, background: backgroundBtn }}
+            >
+              {colorOptions.map((colorOpt, index) => {
+                return (
+                  <button
+                    key={index}
+                    className="btn-option"
+                    style={{ color: textBtn, background: backgroundBtn }}
+                    onClick={(e) => handleSelectColor(e)}
+                    value={colorOpt}
+                  >
+                    {colorOpt}
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>
