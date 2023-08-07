@@ -8,8 +8,9 @@ let totalPerPerson = "0.00";
 export default function Display() {
   const { primary, secondary, backgroundInput, secondaryTitle } =
     useContext(ConfigContext);
-  const { bill, setBill, tip, setTip, setCustomTip, people, setPeople } =
+  const { calcState, dispatch } =
     useContext(StateContext);
+  const { bill, tip, people } = calcState;
 
   useMemo(() => {
     if (!people) return (totalPerPerson = "0.00");
@@ -26,10 +27,7 @@ export default function Display() {
   }, [bill, people, tip]);
 
   const handleReset = () => {
-    setBill(0);
-    setTip(10);
-    setCustomTip(0);
-    setPeople(0);
+    dispatch({ type: "RESET" });
     tipPerPerson = "0.00";
     totalPerPerson = "0.00";
   };

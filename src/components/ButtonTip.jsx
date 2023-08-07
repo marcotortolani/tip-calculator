@@ -5,13 +5,13 @@ import { StateContext } from "../StateProvider";
 export default function ButtonTip({ value }) {
   const { primary, secondary, textBtn, backgroundBtn } =
     useContext(ConfigContext);
-    const { tip, setTip, setCustomTip } =
-    useContext(StateContext);
+  const { calcState, dispatch } = useContext(StateContext);
+  const { tip } = calcState;
 
   const handleTip = () => {
-    setTip(value);
-    setCustomTip(0);
+    dispatch({ type: "SELECT_TIP", tip: value });
   };
+  
   return (
     <button
       className="btn"

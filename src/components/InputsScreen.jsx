@@ -9,11 +9,13 @@ const valuesTips = [5, 10, 15, 25, 50];
 export default function InputsScreen() {
   const { primary, primaryTitle, secondary, backgroundInput, error } =
     useContext(ConfigContext);
-  const { setTip, customTip, setCustomTip, people } = useContext(StateContext);
+
+  const { calcState, dispatch } = useContext(StateContext);
+  const { customTip, people } = calcState;
 
   const handleCustomTip = (e) => {
-    setCustomTip(e.target.value);
-    setTip(e.target.value);
+    const tipAmount = e.target.value;
+    dispatch({ type: "CUSTOM_TIP", tip: tipAmount, customTip: tipAmount });
   };
 
   return (
