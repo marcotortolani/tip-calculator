@@ -22,7 +22,13 @@ export default defineConfig({
           {
             src: "./public/logo-app.png",
             sizes: "144x144",
-            type: "image",
+            type: "image/png",
+          },
+          {
+            src: "./public/logo-app.png",
+            sizes: "144x144",
+            type: "image/png",
+            purpose: "any maskable",
           },
         ],
       },
