@@ -10,7 +10,7 @@ export default defineConfig({
       injectRegister: "inline",
       registerType: "autoUpdate",
       devOptions: { enabled: true },
-      includeAssets: ["./public/logo.png"],
+      includeAssets: ["./public/logo-app.png"],
       manifest: {
         name: "Tip Calculator",
         short_name: "TipCalc",
@@ -20,8 +20,8 @@ export default defineConfig({
         theme_color: "#000",
         icons: [
           {
-            src: "./public/logo.png",
-            sizes: "92x92",
+            src: "./public/logo-app.png",
+            sizes: "144x144",
             type: "image",
           },
         ],
