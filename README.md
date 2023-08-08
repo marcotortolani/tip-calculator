@@ -48,7 +48,7 @@ Users should be able to:
 
 ### Screenshot
 
-["Screenshot Tip Calculator App"](./tip-calculator-app/public/tip-calculator-frontendmentor-tortolani.png)
+["Screenshot Tip Calculator App"](public/tip-calculator-frontendmentor-tortolani.png)
 
 ### Links
 
